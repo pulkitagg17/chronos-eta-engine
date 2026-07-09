@@ -22,7 +22,9 @@ This project intentionally avoids external infrastructure (Redis, PostgreSQL, Bu
 
 # 🏗 Architecture
 
-```text
+![Architecture Diagram](architecture.png)
+
+<!-- ```text
                     Client
                        │
         ┌──────────────┴──────────────┐
@@ -55,7 +57,7 @@ Availability Service
         │
         ▼
      Final ETA
-```
+``` -->
 
 ---
 
@@ -204,48 +206,6 @@ http://localhost:3000
 ```
 
 ---
-
-# 🔄 Request Flow
-
-```
-POST /api/eta
-
-↓
-
-Express Route
-
-↓
-
-ETA Engine
-
-↓
-
-Route Service
-
-↓
-
-Traffic Service
-
-↓
-
-Weather Service
-
-↓
-
-Availability Service
-
-↓
-
-Database
-
-↓
-
-ETA Calculation
-
-↓
-
-Response
-```
 
 ---
 
