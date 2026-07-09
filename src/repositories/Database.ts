@@ -14,12 +14,24 @@ class Database {
 
     updatePrepTime(
         restaurant: string,
-        prepTime: number
+        actualPrepTime: number
     ): void {
+
+        const currentAverage =
+            this.getPrepTime(restaurant);
+
+        const newAverage =
+            Math.round(
+                (currentAverage + actualPrepTime) / 2
+            );
 
         this.restaurantPrepTimes.set(
             restaurant,
-            prepTime
+            newAverage
+        );
+
+        console.log(
+            `${restaurant} Average Updated -> ${newAverage}`
         );
 
     }
