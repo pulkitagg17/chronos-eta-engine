@@ -2,6 +2,7 @@ import { RouteService } from "./RouteService.js";
 import { TrafficService } from "./TrafficService.js";
 import { WeatherService } from "./WeatherService.js";
 import { AvailabilityService } from "./AvailabilityService.js";
+import { database } from "../repositories/Database.js";
 
 export class ETAEngine{
 
@@ -37,12 +38,19 @@ export class ETAEngine{
 
         console.log("Availability Factor:", availabilityFactor);
 
+        const prepTime = database.getPrepTime(restaurant);
+
+        console.log("Prep Time:", prepTime);
+
         const eta =
             Math.round(
-                travelTime * 
+                travelTime +  
+
+                prepTime *
                 trafficFactor *
                 weatherFactor * 
                 availabilityFactor
+                
             );
 
         console.log("ETA:", eta);
