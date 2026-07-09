@@ -207,7 +207,7 @@ http://localhost:3000
 
 ---
 
----
+<!-- ---
 
 # 🔄 Feedback Flow
 
@@ -243,7 +243,7 @@ Restaurant Average Updated
 Future ETA Improves
 ```
 
----
+--- -->
 
 # 🧠 Backend Concepts Demonstrated
 
